@@ -1,33 +1,44 @@
 //Business Logic
 
 
-function Movie(name, showtime, age, cost){
-  this.name =  name;
-  this.showtime = showtime;
-  this.age = age;
-  this.cost = cost;
-}
-// this.premium = premium;
+
+
+function ticketPrice(userInput){
+  var output = totalCost;
+
+  function Movie(name, showtime, age, cost){
+    this.name =  name;
+    this.showtime = showtime;
+    this.age = age;
+    this.cost = cost;
+  }
+  // this.premium = premium;
 
   var wonder = new Movie("Wonder Woman", [8,11,17,20], [5,0], 10);
   var dunkirk = new Movie("Dunkirk", [8,11,17,20], [5,0], 10);
   var spiderman = new Movie("Spiderman: Homecoming", [8,11,17,20], [5,0], 10);
   var dispicable = new Movie("Dispicable ME:3", [8,11,17,20], [5,0], 10);
 
-Movie.prototype.ticketPrice = function() {
-  return this.cost;
-}
-
-
   var totalCost = 10;
-  var output = totalCost;
 
+  Movie.prototype.toCost = function(age, time) {
+    for(var i=0, i=age, i--){
+      totalCost-= i;
+    }
+    // for(var i=0, i<=premium, i++){
+    //   totalCost+= i;
+    // }
+    for(var i=0, i<=time, i++){
+      totalCost+= i;
+    }
+  }
+
+};
 
   // return output;
 
 
 // Movie.prototype.toCalc=function(premium, showtime, discount){
-//   // totalCost+= this.premium;
 //   // totalCost+= this.showtime[];
 //   // totalCost+= this.discount;
 // }
@@ -95,9 +106,11 @@ $(document).ready(function(){
   // alert (output);
     var userInput = new Movie(userMovie, userTime, userAge)
 
+
+
     $(".movie-name").text(userInput.name);
     // $(".movie-time").text(userTime);
-    // $(".movie-price").text(outpu2);
+    $(".movie-price").text(output2);
 
     $("#show-movie").show();
 
